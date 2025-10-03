@@ -1,11 +1,5 @@
-# -----------------------------------------------------------------------------
-# Default behavior
-# -----------------------------------------------------------------------------
 * text=auto eol=lf
 
-# -----------------------------------------------------------------------------
-# Source code (force LF endings)
-# -----------------------------------------------------------------------------
 *.js text eol=lf
 *.jsx text eol=lf
 *.ts text eol=lf
@@ -13,9 +7,6 @@
 *.mjs text eol=lf
 *.cjs text eol=lf
 
-# -----------------------------------------------------------------------------
-# Config / Data files
-# -----------------------------------------------------------------------------
 *.json text eol=lf
 *.yaml text eol=lf
 *.yml text eol=lf
@@ -25,14 +16,11 @@
 *.env* text eol=lf
 *.prisma text eol=lf
 
-# -----------------------------------------------------------------------------
-# OS / Binary files (treat as binary, no diffs)
-# -----------------------------------------------------------------------------
 *.png binary
 *.jpg binary
 *.jpeg binary
 *.gif binary
-*.svg text          # keep diffs visible, since it's XML
+*.svg text
 *.ico binary
 *.mp4 binary
 *.mp3 binary
@@ -44,34 +32,18 @@
 *.woff binary
 *.woff2 binary
 
-# -----------------------------------------------------------------------------
-# Prisma
-# -----------------------------------------------------------------------------
 *.db binary
 *.sqlite binary
 
-# -----------------------------------------------------------------------------
-# Archives / Exports
-# -----------------------------------------------------------------------------
 /export/* binary
 
-# -----------------------------------------------------------------------------
-# Documentation (force UTF-8)
-# -----------------------------------------------------------------------------
 *.md text working-tree-encoding=UTF-8
 *.txt text working-tree-encoding=UTF-8
 *.rtf text working-tree-encoding=UTF-8
 
-# -----------------------------------------------------------------------------
-# Lockfiles (normalize but don’t change content)
-# -----------------------------------------------------------------------------
 package-lock.json text eol=lf
 yarn.lock text eol=lf
 pnpm-lock.yaml text eol=lf
 
-# -----------------------------------------------------------------------------
-# GitHub linguist overrides
-# (ensures correct language stats / repo display)
-# -----------------------------------------------------------------------------
 *.prisma linguist-language=Prisma
 *.mdx linguist-language=Markdown
