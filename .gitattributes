@@ -1,75 +1,77 @@
 # -----------------------------------------------------------------------------
-# Dependencies
+# Default behavior
 # -----------------------------------------------------------------------------
-node_modules
-.pnp
-.pnp.js
+* text=auto eol=lf
 
 # -----------------------------------------------------------------------------
-# Testing
+# Source code (force LF endings)
 # -----------------------------------------------------------------------------
-coverage/
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
 
 # -----------------------------------------------------------------------------
-# Next.js
+# Config / Data files
 # -----------------------------------------------------------------------------
-.next/
-out/
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+*.md text eol=lf
+*.mdx text eol=lf
+*.env* text eol=lf
+*.prisma text eol=lf
 
 # -----------------------------------------------------------------------------
-# Production builds
+# OS / Binary files (treat as binary, no diffs)
 # -----------------------------------------------------------------------------
-build/
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg text          # keep diffs visible, since it's XML
+*.ico binary
+*.mp4 binary
+*.mp3 binary
+*.mov binary
+*.zip binary
+*.tar binary
+*.tgz binary
+*.gz binary
+*.woff binary
+*.woff2 binary
 
 # -----------------------------------------------------------------------------
-# MacOS cruft
+# Prisma
 # -----------------------------------------------------------------------------
-.DS_Store
-.AppleDouble
-.LSOverride
-Icon?
-__MACOSX/
+*.db binary
+*.sqlite binary
 
 # -----------------------------------------------------------------------------
-# Certificates / keys
+# Archives / Exports
 # -----------------------------------------------------------------------------
-*.pem
+/export/* binary
 
 # -----------------------------------------------------------------------------
-# Debug / logs
+# Documentation (force UTF-8)
 # -----------------------------------------------------------------------------
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+*.md text working-tree-encoding=UTF-8
+*.txt text working-tree-encoding=UTF-8
+*.rtf text working-tree-encoding=UTF-8
 
 # -----------------------------------------------------------------------------
-# Environment variables
+# Lockfiles (normalize but don’t change content)
 # -----------------------------------------------------------------------------
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+package-lock.json text eol=lf
+yarn.lock text eol=lf
+pnpm-lock.yaml text eol=lf
 
 # -----------------------------------------------------------------------------
-# Vercel
+# GitHub linguist overrides
+# (ensures correct language stats / repo display)
 # -----------------------------------------------------------------------------
-.vercel/
-
-# -----------------------------------------------------------------------------
-# TypeScript
-# -----------------------------------------------------------------------------
-*.tsbuildinfo
-next-env.d.ts
-
-# -----------------------------------------------------------------------------
-# IDE / Editor
-# -----------------------------------------------------------------------------
-.vscode/
-.idea/
-
-# -----------------------------------------------------------------------------
-# Contentlayer cache
-# -----------------------------------------------------------------------------
-.contentlayer/
+*.prisma linguist-language=Prisma
+*.mdx linguist-language=Markdown

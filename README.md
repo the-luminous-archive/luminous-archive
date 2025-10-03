@@ -1,90 +1,80 @@
-# Taxonomy
+# The Luminous Archive
 
-An open source application built using the new router, server components and everything new in Next.js 13.
+A living, global archive of humanity’s deepest visionary experiences.  
+We preserve and honor first-person accounts of psychedelic journeys and near-death experiences, treating them as sacred offerings to humanity — not entertainment, not doctrine.
 
-> **Warning**
-> This app is a work in progress. I'm building this in public. You can follow the progress on Twitter [@shadcn](https://twitter.com/shadcn).
-> See the roadmap below.
+## 🌌 About This Project
 
-## About this project
+The Luminous Archive is being built as a modern open-source application using the latest Next.js features.  
+It inherits its foundation from the **Taxonomy** project by [shadcn](https://twitter.com/shadcn), adapted and expanded to serve a sacred archival mission rather than act as a starter template.
 
-This project as an experiment to see how a modern app (with features like authentication, subscriptions, API routes, static pages for docs ...etc) would work in Next.js 13 and server components.
+Our goal:  
+- Preserve transformative stories for future generations.  
+- Normalize ineffable experiences by providing shared language and resonance.  
+- Map humanity’s inner evolution using Chris Bache’s five-layer framework.  
+- Contribute to the emergence of the Future Human — a species rooted in love, clarity, and unity consciousness.  
 
-**This is not a starter template.**
+## ⚙️ Features
 
-A few people have asked me to turn this into a starter. I think we could do that once the new features are out of beta.
+From its Taxonomy roots, the app already includes:  
+- New Next.js `/app` dir with routing, layouts, and nested layouts.  
+- Server & client components with data fetching, caching, and mutation.  
+- API routes, middlewares, and authentication (via **NextAuth.js**).  
+- ORM with **Prisma** (default Postgres, adaptable to PlanetScale).  
+- UI components with **shadcn/ui** and **Radix UI**.  
+- Static documentation and blog pages via **MDX** + **Contentlayer**.  
+- Subscriptions via **Stripe** (optional, not central to the archive).  
+- Styling with **Tailwind CSS**.  
+- Schema validation with **Zod**.  
+- Fully typed in **TypeScript**.  
 
-## Note on Performance
+## 🗺️ Organizing Principles
 
-> **Warning**
-> This app is using the unstable releases for Next.js 13 and React 18. The new router and app dir is still in beta and not production-ready.
-> **Expect some performance hits when testing the dashboard**.
-> If you see something broken, you can ping me [@shadcn](https://twitter.com/shadcn).
+### Five Layers of Consciousness (Chris Bache)
+1. **Personal Mind** — ego death, healing, karmic clearing  
+2. **Species Mind** — collective humanity, cultural rebirth, planetary destiny  
+3. **Archetypal Mind** — cosmic beings, mythic structures, evolutionary architecture  
+4. **Causal Mind** — oneness, emptiness, infinite love  
+5. **Diamond Luminosity** — clear light, diamond soul, primordial source  
 
-## Features
+### Phenomena Atlas
+A shared glossary of visionary motifs (tunnels, radiant light, life review, beings, clear light) used to tag and cross-reference stories.
 
-- New `/app` dir,
-- Routing, Layouts, Nested Layouts and Layout Groups
-- Data Fetching, Caching and Mutation
-- Loading UI
-- Route handlers
-- Metadata files
-- Server and Client Components
-- API Routes and Middlewares
-- Authentication using **NextAuth.js**
-- ORM using **Prisma**
-- Database on **PlanetScale**
-- UI Components built using **Radix UI**
-- Documentation and blog using **MDX** and **Contentlayer**
-- Subscriptions using **Stripe**
-- Styled using **Tailwind CSS**
-- Validations using **Zod**
-- Written in **TypeScript**
+### Living Atlas
+The Archive evolves dynamically as contributions are added, highlighting overlaps and patterns across accounts.
 
-## Roadmap
+## 🚀 Running Locally
 
-- [x] ~Add MDX support for basic pages~
-- [x] ~Build marketing pages~
-- [x] ~Subscriptions using Stripe~
-- [x] ~Responsive styles~
-- [x] ~Add OG image for blog using @vercel/og~
-- [x] Dark mode
-
-## Known Issues
-
-A list of things not working right now:
-
-1. ~GitHub authentication (use email)~
-2. ~[Prisma: Error: ENOENT: no such file or directory, open '/var/task/.next/server/chunks/schema.prisma'](https://github.com/prisma/prisma/issues/16117)~
-3. ~[Next.js 13: Client side navigation does not update head](https://github.com/vercel/next.js/issues/42414)~
-4. [Cannot use opengraph-image.tsx inside catch-all routes](https://github.com/vercel/next.js/issues/48162)
-
-## Why not tRPC, Turborepo or X?
-
-I might add this later. For now, I want to see how far we can get using Next.js only.
-
-If you have some suggestions, feel free to create an issue.
-
-## Running Locally
-
-1. Install dependencies using pnpm:
+1. Install dependencies:
 
 ```sh
 pnpm install
-```
 
-2. Copy `.env.example` to `.env.local` and update the variables.
+    2.    Copy environment variables:
 
-```sh
 cp .env.example .env.local
-```
 
-3. Start the development server:
+    3.    Start the development server:
 
-```sh
 pnpm dev
-```
 
-## License
+Visit http://localhost:3000.
 
-Licensed under the [MIT license](https://github.com/shadcn/taxonomy/blob/main/LICENSE.md).
+📌 Roadmap
+    •    Publish Phenomena Atlas (taxonomy) as a browsable glossary.
+    •    Story submission and tagging workflow.
+    •    Steward console for curators.
+    •    Export pipeline for archival snapshots (JSONL + BagIt).
+    •    Iterative UI refinements (dark mode, responsive layouts).
+
+🐛 Known Issues
+
+Because this project builds on the cutting edge of Next.js App Router and React Server Components, some behaviors may be unstable. Please open an issue if you encounter problems.
+
+📜 License
+    •    Code: MIT License
+    •    Stories: Shared openly under CC0 for the benefit of humanity.
+
+⸻
+
+“Love first, then build. Let love be the method, not just the reward.”

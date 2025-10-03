@@ -36,14 +36,18 @@ export const metadata = {
     "Tailwind CSS",
     "Server Components",
     "Radix UI",
+    "NDE",
+    "Near-Death Experience",
+    "Psychedelics",
+    "Visionary Experiences",
   ],
   authors: [
     {
-      name: "shadcn",
-      url: "https://shadcn.com",
+      name: "The Luminous Archive",
+      url: "http://localhost:3000",
     },
   ],
-  creator: "shadcn",
+  creator: "The Luminous Archive",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
@@ -61,7 +65,6 @@ export const metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${siteConfig.url}/og.jpg`],
-    creator: "@shadcn",
   },
   icons: {
     icon: "/favicon.ico",
