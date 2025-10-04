@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -29,6 +29,7 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
+  @@index([userId]) // index for relation lookups
   @@map(name: "accounts")
 }
 
@@ -37,8 +38,10 @@ model Session {
   sessionToken String   @unique
   userId       String
   expires      DateTime
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId]) // index for relation lookups
   @@map(name: "sessions")
 }
 
@@ -69,6 +72,7 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+  @@index([identifier]) // common lookup key
   @@map(name: "verification_tokens")
 }
 
@@ -83,5 +87,6 @@ model Post {
 
   author User @relation(fields: [authorId], references: [id])
 
+  @@index([authorId]) // index for relation lookups
   @@map(name: "posts")
 }
