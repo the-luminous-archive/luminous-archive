@@ -63,6 +63,12 @@ model User {
   stripePriceId          String?   @map(name: "stripe_price_id")
   stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
 
+  // Default contributor preferences
+  defaultAnonymityMode   AnonymityMode? @map(name: "default_anonymity_mode")
+  defaultLicenseType     LicenseType?   @map(name: "default_license_type")
+  defaultConsentResearch Boolean        @default(false) @map(name: "default_consent_research")
+  defaultConsentLLM      Boolean        @default(false) @map(name: "default_consent_llm")
+
   @@map(name: "users")
 }
 
@@ -76,17 +82,47 @@ model VerificationToken {
   @@map(name: "verification_tokens")
 }
 
+enum PostStatus {
+  DRAFT
+  IN_REVIEW
+  PUBLISHED
+}
+
+enum AnonymityMode {
+  IDENTIFIED
+  PSEUDONYMOUS
+  ANONYMOUS
+}
+
+enum LicenseType {
+  CC0
+  CC_BY
+  CC_BY_SA
+  CC_BY_NC
+  CC_BY_NC_SA
+}
+
 model Post {
-  id        String   @id @default(cuid())
+  id        String     @id @default(cuid())
   title     String
   content   Json?
-  published Boolean  @default(false)
-  createdAt DateTime @default(now()) @map(name: "created_at")
-  updatedAt DateTime @default(now()) @map(name: "updated_at")
+  status    PostStatus @default(DRAFT)
+  published Boolean    @default(false)
+  createdAt DateTime   @default(now()) @map(name: "created_at")
+  updatedAt DateTime   @default(now()) @updatedAt @map(name: "updated_at")
   authorId  String
+
+  // Contributor preferences (can be overridden per-story)
+  anonymityMode AnonymityMode? @map(name: "anonymity_mode")
+  licenseType   LicenseType?   @map(name: "license_type")
+
+  // Consent flags
+  consentResearch Boolean @default(false) @map(name: "consent_research")
+  consentLLM      Boolean @default(false) @map(name: "consent_llm")
 
   author User @relation(fields: [authorId], references: [id])
 
-  @@index([authorId]) // index for relation lookups
+  @@index([authorId])
+  @@index([status])
   @@map(name: "posts")
 }

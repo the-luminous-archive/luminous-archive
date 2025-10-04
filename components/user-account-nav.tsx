@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { User } from "next-auth"
 import { signOut } from "next-auth/react"
 
@@ -18,6 +18,8 @@ interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function UserAccountNav({ user }: UserAccountNavProps) {
+  const router = useRouter()
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -38,14 +40,23 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           </div>
         </div>
         <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
-          <Link href="/dashboard">Dashboard</Link>
+        <DropdownMenuItem
+          className="cursor-pointer"
+          onSelect={() => router.push("/dashboard")}
+        >
+          Dashboard
         </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="/dashboard/billing">Billing</Link>
+        <DropdownMenuItem
+          className="cursor-pointer"
+          onSelect={() => router.push("/dashboard/billing")}
+        >
+          Billing
         </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="/dashboard/settings">Settings</Link>
+        <DropdownMenuItem
+          className="cursor-pointer"
+          onSelect={() => router.push("/dashboard/settings")}
+        >
+          Settings
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem
