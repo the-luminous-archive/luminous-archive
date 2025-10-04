@@ -17,6 +17,8 @@
     "postinstall": "prisma generate",
     "typecheck": "tsc --noEmit",
     "ci": "pnpm lint && pnpm typecheck && pnpm build",
+    "db:push": "prisma db push",
+    "db:seed": "tsx prisma/seed.ts",
     "smoke": "tsx scripts/smoke-test.ts",
     "smoke:cleanup": "tsx scripts/cleanup-test-user.ts"
   },
@@ -103,6 +105,7 @@
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.14",
+    "dotenv": "^17.2.3",
     "eslint": "^8.39.0",
     "eslint-config-next": "13.0.0",
     "eslint-config-prettier": "^8.8.0",
