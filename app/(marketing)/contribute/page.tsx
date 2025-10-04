@@ -14,7 +14,7 @@ export default function ContributePage() {
             Contribute a Story
           </h1>
         </div>
-        <div className="prose prose-slate dark:prose-invert max-w-none">
+        <div className="prose prose-slate max-w-none dark:prose-invert">
           <p className="text-lg text-muted-foreground">
             We are honored that you are considering sharing your visionary
             experience with The Luminous Archive.
@@ -45,24 +45,24 @@ export default function ContributePage() {
           <p>The upcoming submission system will include:</p>
           <ul>
             <li>
-              <strong>Consent verification:</strong> Clear attestation that
-              your story is your own first-person experience
+              <strong>Consent verification:</strong> Clear attestation that your
+              story is your own first-person experience
             </li>
             <li>
               <strong>Anonymity options:</strong> Choose to remain anonymous or
               use a pseudonym
             </li>
             <li>
-              <strong>License selection:</strong> Select how you want your
-              story to be shared (Creative Commons, etc.)
+              <strong>License selection:</strong> Select how you want your story
+              to be shared (Creative Commons, etc.)
             </li>
             <li>
               <strong>Guided taxonomy:</strong> Help us understand your
               experience using our reverent classification system
             </li>
             <li>
-              <strong>Story control:</strong> Update or withdraw your
-              submission at any time
+              <strong>Story control:</strong> Update or withdraw your submission
+              at any time
             </li>
           </ul>
 

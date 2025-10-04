@@ -130,8 +130,8 @@ export default async function IndexPage() {
               <div className="space-y-2">
                 <h3 className="font-bold">Open by Design</h3>
                 <p className="text-sm text-muted-foreground">
-                  TypeScript, Next.js, Prisma — built to be forked, studied,
-                  and extended.
+                  TypeScript, Next.js, Prisma — built to be forked, studied, and
+                  extended.
                 </p>
               </div>
             </div>

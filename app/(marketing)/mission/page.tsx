@@ -14,7 +14,7 @@ export default function MissionPage() {
             Our Mission
           </h1>
         </div>
-        <div className="prose prose-slate dark:prose-invert max-w-none">
+        <div className="prose prose-slate max-w-none dark:prose-invert">
           <p className="text-lg text-muted-foreground">
             The Luminous Archive exists to preserve and honor first-person
             accounts of visionary experiences — near-death experiences (NDEs)
@@ -36,9 +36,9 @@ export default function MissionPage() {
             These experiences matter not just today, but for generations to
             come. We&apos;re building infrastructure for long-term digital
             preservation: checksummed exports, mirroring to institutional
-            archives like Zenodo and the Internet Archive, and open formats
-            that will remain accessible decades from now. This archive is
-            designed to outlast any single organization or platform.
+            archives like Zenodo and the Internet Archive, and open formats that
+            will remain accessible decades from now. This archive is designed to
+            outlast any single organization or platform.
           </p>
 
           <h2>Contributor Dignity</h2>
@@ -47,8 +47,8 @@ export default function MissionPage() {
             explicit consent, respect anonymity preferences, and provide clear
             licensing options. Stories can be withdrawn or updated at any time.
             We will never commodify these experiences or treat contributors as
-            mere data sources. Their voices, their agency, their dignity —
-            these are non-negotiable.
+            mere data sources. Their voices, their agency, their dignity — these
+            are non-negotiable.
           </p>
         </div>
       </div>
