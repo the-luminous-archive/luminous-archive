@@ -9,6 +9,10 @@ export async function POST(req: Request) {
   const body = await req.text()
   const signature = headers().get("Stripe-Signature") as string
 
+  if (!env.STRIPE_WEBHOOK_SECRET || !stripe) {
+    return new Response("Stripe not configured", { status: 500 })
+  }
+
   let event: Stripe.Event
 
   try {

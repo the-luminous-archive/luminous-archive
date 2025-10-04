@@ -17,6 +17,10 @@ export async function GET(req: Request) {
       return new Response(null, { status: 403 })
     }
 
+    if (!stripe) {
+      return new Response("Stripe not configured", { status: 500 })
+    }
+
     const subscriptionPlan = await getUserSubscriptionPlan(session.user.id)
 
     // The user is on the pro plan.
