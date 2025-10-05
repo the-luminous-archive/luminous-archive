@@ -6,7 +6,10 @@ import { getCurrentUser } from "@/lib/session"
 import { DashboardHeader } from "@/components/header"
 import { DashboardShell } from "@/components/shell"
 import { StoryCard } from "@/components/dashboard/story-card"
-import { PostCreateButton } from "@/components/post-create-button"
+import Link from "next/link"
+import { buttonVariants } from "@/components/ui/button"
+import { Icons } from "@/components/icons"
+import { cn } from "@/lib/utils"
 import { EmptyPlaceholder } from "@/components/empty-placeholder"
 
 export const metadata = {
@@ -53,7 +56,13 @@ export default async function StoriesPage() {
         heading="My Stories"
         text="Create and manage your story submissions."
       >
-        <PostCreateButton />
+        <Link
+          href="/stories/new"
+          className={cn(buttonVariants())}
+        >
+          <Icons.add className="mr-2 h-4 w-4" />
+          New Story
+        </Link>
       </DashboardHeader>
       <div className="space-y-8">
         {stories.length === 0 ? (
@@ -63,7 +72,13 @@ export default async function StoriesPage() {
             <EmptyPlaceholder.Description>
               Begin a draft — every journey starts in honesty.
             </EmptyPlaceholder.Description>
-            <PostCreateButton variant="outline" />
+            <Link
+              href="/stories/new"
+              className={cn(buttonVariants({ variant: "outline" }))}
+            >
+              <Icons.add className="mr-2 h-4 w-4" />
+              New Story
+            </Link>
           </EmptyPlaceholder>
         ) : (
           <>

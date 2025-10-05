@@ -55,7 +55,7 @@ export function StoryCard({ story }: StoryCardProps) {
           <div className="flex-1 space-y-1">
             <CardTitle className="line-clamp-1">
               <Link
-                href={`/editor/${story.id}`}
+                href={`/stories/${story.id}/edit`}
                 className="hover:underline"
               >
                 {story.title}
@@ -73,7 +73,7 @@ export function StoryCard({ story }: StoryCardProps) {
               {getStatusLabel(story.status)}
             </Badge>
             <Link
-              href={`/editor/${story.id}`}
+              href={`/stories/${story.id}/edit`}
               className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
             >
               Edit

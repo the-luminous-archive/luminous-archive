@@ -120,9 +120,21 @@ model Post {
   consentResearch Boolean @default(false) @map(name: "consent_research")
   consentLLM      Boolean @default(false) @map(name: "consent_llm")
 
+  // Publishing & versioning (additive for unified editor)
+  slug            String?   @unique
+  publishedAt     DateTime? @map(name: "published_at")
+  revision        Int       @default(1)
+  lastAutosaveAt  DateTime? @map(name: "last_autosave_at")
+
+  // Taxonomy references (arrays of IDs/slugs from SSOT when available)
+  layers   String[] @default([])
+  motifs   String[] @default([])
+  feelings String[] @default([])
+
   author User @relation(fields: [authorId], references: [id])
 
   @@index([authorId])
   @@index([status])
+  @@index([slug])
   @@map(name: "posts")
 }
